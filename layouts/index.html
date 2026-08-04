@@ -56,6 +56,8 @@
   .card p code { background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; }
   .status { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); white-space: nowrap; }
   .status.ready { color: var(--ready); }
+  .status.active { color: var(--active); }
+  .status.planned { color: var(--planned); }
   .legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin: 4px 0 8px; padding: 0; list-style: none; font-size: .9rem; color: var(--muted); }
   .principles { color: var(--muted); text-align: center; padding: 10px 0 0; }
   footer { color: var(--muted); text-align: center; padding: 40px 0 56px; font-size: .9rem; }
@@ -91,6 +93,7 @@
       <a href="https://github.com/go-ruby-kramdown/kramdown/blob/main/LICENSE"><img alt="License: BSD-3-Clause" src="https://img.shields.io/badge/license-BSD--3--Clause-blue"></a>
       <a href="https://go.dev/dl/"><img alt="Go 1.26.4+" src="https://img.shields.io/badge/go-1.26.4%2B-00ADD8"></a>
       <a href="https://github.com/go-ruby-kramdown/kramdown"><img alt="Coverage 100%" src="https://img.shields.io/badge/coverage-100%25-1a7f37"></a>
+      <a href="https://github.com/go-ruby-kramdown/kramdown#conformance--testing"><img alt="Conformance 190/198 (95.96%)" src="https://img.shields.io/badge/conformance-190%2F198%20(95.96%25)-1a7f37"></a>
     </div>
   </header>
 
@@ -107,6 +110,7 @@
     </section>
     <ul class="legend" aria-label="What the phase status labels mean">
       <li><span class="status ready">ready</span> capability complete (exit criteria met, nothing material left)</li>
+      <li><span class="status active">active</span> in progress — closing the remaining corpus gap</li>
     </ul>
     <p class="principles">A faithful pure-Go port of Ruby's <code>kramdown</code>, cgo disabled, so it cross-compiles and embeds anywhere. Validated differentially against reference Ruby. It is a standalone, reusable module and the backend bound by <code>rbgo</code> into the sibling org <a href="https://github.com/go-embedded-ruby">github.com/go-embedded-ruby</a>.</p>
   </main>
