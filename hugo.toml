@@ -16,14 +16,14 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "404"]
   blurb = "Mirrors the observable behaviour of Ruby's `kramdown` from reference Ruby (MRI), validated by a differential oracle against the reference rather than approximated — **without any Ruby runtime**."
 
 [[params.phases]]
-  name = "Corpus conformance · 95.96%"
+  name = "Corpus conformance · 99.49%"
   status = "ready"
-  blurb = "**190 of 198** shared-corpus cases render byte-exact against the Ruby `kramdown` 2.5.2 gem, locked by a shrink-only ratchet. Already ported: the full `Parser::Html` raw-HTML front-end + `html_to_native`, table-of-contents, the HTML entity table, footnotes, smart quotes, header options, transliterated IDs and CJK line-breaks."
+  blurb = "**197 of 198** shared-corpus cases render byte-exact against the Ruby `kramdown` 2.5.2 gem, locked by a shrink-only ratchet. Ported: the full `Parser::Html` raw-HTML front-end + `html_to_native`, table-of-contents, the 905-entry HTML entity table, footnotes, smart quotes, header options, transliterated IDs, CJK line-breaks, LaTeX **math** (MathJax-wrapped), **IAL/ALD** attribute lists, and **Rouge** syntax highlighting (including the PHP lexer)."
 
 [[params.phases]]
-  name = "Remaining 8 cases"
+  name = "Remaining 1 case"
   status = "active"
-  blurb = "Not spec-complete. The 8 open corpus cases are LaTeX **math** (needs a math engine), two **Rouge** syntax-highlighting cases (need a PHP lexer / custom formatter) and two advanced **IAL / attribute-list** cases."
+  blurb = "Not spec-complete, but the single open case (`rouge/multiple`) is a test-harness artifact: it names a custom Rouge formatter class defined only inside kramdown's own Ruby test suite (`test/test_files.rb`), not a library feature, so no pure-Go wiring can supply it. Its three code blocks already tokenise byte-for-byte; only the harness-injected wrapper div is unreachable."
 
 [[params.phases]]
   name = "Standalone & reusable"
